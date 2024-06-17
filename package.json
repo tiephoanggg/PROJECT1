@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/node": "^7.24.6",
+    "@babel/preset-env": "^7.24.6",
+    "nodemon": "^3.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/src/server.js",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./server.js"
+  },
+  "name": "tiephoang",
+  "version": "1.0.0",
+  "description": "new project",
+  "main": "server.js",
+  "author": "tiep",
+  "license": "ISC"
+}
